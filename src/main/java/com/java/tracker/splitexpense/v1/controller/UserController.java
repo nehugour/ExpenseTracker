@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
-public class UserController {
+public class UserController  {
 
     @Autowired
     private UserRepository userRepository;
