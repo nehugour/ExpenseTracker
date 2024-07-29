@@ -55,7 +55,9 @@ Update application.properties with your database configuration:
 
 properties
 spring.datasource.url=jdbc:mysql://localhost:3306/yourdatabase
+
 spring.datasource.username=yourusername
+
 spring.datasource.password=yourpassword
 Run the Application
 
