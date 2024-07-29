@@ -25,8 +25,20 @@ CREATE TABLE IF NOT EXISTS expense_split (
     id INT AUTO_INCREMENT PRIMARY KEY,
     expense_id INT,
     user_id INT,
+    user_email VARCHAR(255),
     amount DECIMAL(10, 2),
     percentage DECIMAL(5, 2),
     FOREIGN KEY (expense_id) REFERENCES expenses(id),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
+
+CREATE TABLE IF NOT EXISTS expense_participants (
+    expense_id BIGINT,
+    participant_email VARCHAR(255),
+    PRIMARY KEY (expense_id, participant_email),
+    FOREIGN KEY (expense_id) REFERENCES expenses(id),
+    FOREIGN KEY (participant_email) REFERENCES users(email) -- Assumes you have an email field in the users table
+);
+
+
+

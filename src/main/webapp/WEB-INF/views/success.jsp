@@ -62,7 +62,7 @@
             <p>Mobile: ${user.mobile}</p>
         </div>
         <div class="actions">
-            <button onclick="window.location.href='/users/addExpense?email=${user.email}'">Add Expense</button>
+			<button onclick="window.location.href='/expenses/new?email=${user.email}'">Add Expense</button>
             <button onclick="window.location.href='/users/viewProfile?email=${user.email}'">View Profile</button>
             <button onclick="window.location.href='/users/logout'">Logout</button>
         </div>

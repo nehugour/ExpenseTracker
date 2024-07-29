@@ -10,5 +10,6 @@ import com.java.tracker.splitexpense.v1.model.User;
 public interface UserRepository extends JpaRepository<User, Long> {
 	
 	User findByEmail(String email);
+	
 }
 
