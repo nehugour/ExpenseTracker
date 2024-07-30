@@ -10,7 +10,7 @@ import com.java.tracker.splitexpense.v1.model.Expense;
 import com.java.tracker.splitexpense.v1.service.ExpenseService;
 
 @Controller
-public class ExpenseController {
+public class ExpenseController  {
 
     @Autowired
     private ExpenseService expenseService;
