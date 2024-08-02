@@ -1,6 +1,9 @@
 package com.java.tracker.splitexpense.v1.controller;
 import com.java.tracker.splitexpense.v1.model.User;
 import com.java.tracker.splitexpense.v1.repository.UserRepository;
+
+import jakarta.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -35,11 +38,13 @@ public class UserController  {
     }
     
     @PostMapping("/login")
-    public String login(@ModelAttribute LoginRequest loginRequest, Model model) {
+    public String login(@ModelAttribute LoginRequest loginRequest, Model model, HttpSession session) {
         User user = userRepository.findByEmail(loginRequest.getEmail());
         if (user != null && user.getPassword().equals(loginRequest.getPassword())) {
             model.addAttribute("message", "Login successful");
             model.addAttribute("user", user);
+            session.setAttribute("email", user.getEmail()); //It will store the email in session.
+            
             return "success"; // Return success.jsp page
         } else {
             model.addAttribute("error", "Invalid email or password");
