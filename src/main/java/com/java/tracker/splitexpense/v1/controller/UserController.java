@@ -54,7 +54,7 @@ public class UserController  {
 
     @GetMapping("/login")
     public String showLoginPage() {
-    	System.out.println("/login enter");
+    	System.out.println("entering /login method @userController");
         return "login";
     }
     
